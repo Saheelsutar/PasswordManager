@@ -14,7 +14,6 @@ const Manager = () => {
   const getPassword=async() => {
   let req=await fetch("https://backend-optw.onrender.com/")
   let passwords=await req.json()
-  console.log(passwords)
   setpasswordArray((passwords))
   }
   
@@ -112,7 +111,6 @@ const Manager = () => {
 
   }
   const editPassword = (type,id) => {
-    console.log(type)
    setform({...passwordArray.filter(item=>item.id===id)[0],id: id,type: type})//populate the data on the respective input
    setpasswordArray((passwordArray.filter(item=>item.id!==id)))
 
