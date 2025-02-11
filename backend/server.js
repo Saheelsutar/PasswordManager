@@ -1,6 +1,5 @@
 
 const express = require('express')
-const cors=require('cors')
 const dotenv=require('dotenv')
 const { MongoClient } = require('mongodb');
 const bodyparser=require('body-parser')
@@ -16,7 +15,6 @@ const dbName = 'passop';
 client.connect();
 
 app.use(bodyparser.json())
-app.use(cors())
 //Get all the passwords
 app.get('/', async(req, res) => {
     const db = client.db(dbName);
