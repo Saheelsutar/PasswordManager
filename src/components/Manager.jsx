@@ -12,8 +12,9 @@ const Manager = () => {
   const [passwordArray, setpasswordArray] = useState([])
   
   const getPassword=async() => {
-  let req=await fetch("https://backend-optw.onrender.com/")
+  let req=await fetch("https://backend-optw.onrender.com")
   let passwords=await req.json()
+  console.log(passwords)
   setpasswordArray((passwords))
   }
   
@@ -39,7 +40,7 @@ const Manager = () => {
 
       //this if loop is for edit function
       if(form.type ==='click'){
-         await fetch("http://localhost:3000/",{
+         await fetch("https://backend-optw.onrender.com",{
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -89,7 +90,7 @@ const Manager = () => {
     let c=confirm("Do you really want to delete this password?")
     if(c){
       setpasswordArray(passwordArray.filter(item=>item.id!==id))
-      await fetch("http://localhost:3000/",{
+      await fetch("https://backend-optw.onrender.com",{
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -111,6 +112,7 @@ const Manager = () => {
 
   }
   const editPassword = (type,id) => {
+    console.log(type)
    setform({...passwordArray.filter(item=>item.id===id)[0],id: id,type: type})//populate the data on the respective input
    setpasswordArray((passwordArray.filter(item=>item.id!==id)))
 
@@ -257,3 +259,4 @@ const Manager = () => {
 }
 
 export default Manager
+
