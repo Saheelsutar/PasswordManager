@@ -52,7 +52,7 @@ const Manager = () => {
       
      
       setpasswordArray([...passwordArray, {...form,id:uuidv4()}])
-      await fetch("http://localhost:3000/",{
+      await fetch("https://backend-optw.onrender.com",{
         method: "POST",
         headers: {
           "Content-Type": "application/json",
