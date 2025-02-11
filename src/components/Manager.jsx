@@ -12,7 +12,7 @@ const Manager = () => {
   const [passwordArray, setpasswordArray] = useState([])
   
   const getPassword=async() => {
-  let req=await fetch("http://localhost:3000/")
+  let req=await fetch("https://backend-optw.onrender.com/")
   let passwords=await req.json()
   console.log(passwords)
   setpasswordArray((passwords))
