@@ -9,7 +9,7 @@ dotenv.config()
 const app = express()
 const port = 3000
 // Connection URL
-const url = 'mongodb+srv://stud22:mongodb@cluster0.fjcbb.mongodb.net/';
+const url = process.env.MONGO_URI;
 const client = new MongoClient(url);
 // Database Name
 const dbName = 'passop';
