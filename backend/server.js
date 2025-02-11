@@ -16,11 +16,7 @@ const client = new MongoClient(url);
 const dbName = 'passop';
 client.connect();
 
-app.use(cors({
-    origin: '*',  // Allow all origins (for development)
-    methods: ['GET', 'POST', 'DELETE'], // Restrict allowed methods
-    allowedHeaders: ['Content-Type'] // Specify allowed headers
-}));
+app.use(cors());
 
 app.use(bodyparser.json())
 //Get all the passwords
